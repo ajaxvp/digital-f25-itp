@@ -1,0 +1,130 @@
+# Introduction to Programming
+
+## Introduction [5 min]
+
+Computers are powerful machines used to perform tasks faster or easier than humans can. Think about sending a text message or using a calculator. When you send a text, you're basically just talking to someone without being limited by where you are or when you say something. When you use a calculator, you can do math operations that might take minutes to perform in only a few seconds.
+
+To create these things on a computer, we **program** the computer, which basically means that we tell it what to do. Think about how you might read a recipe for baking cookies and then tell your friend each instruction in order. Thinking from a programming perspective, you would be the **programmer** (the person telling the computer what to do), the instructions are called the program's **code**, and your friend is the computer, executing your instructions.
+
+Just as you might tell your friend the instructions to bake cookies in English, programmers have their own languages for talking to computers. Don't worry, though, they still mostly use words from English in them. The one that we will be using today is called Python. Over the course of this workshop, we will program the computer through Python and learn the basics of how we can use our computers to solve problems and build cool projects.
+
+## Thonny [5 min]
+
+On your computer, we have opened an app called Thonny. This app is specifically designed to allow you to write code in Python and run it on your computer. If your screen does not look like the picture here, please let one of us know and we will help you!
+
+![Thonny with code editor and shell open](img/thonny.png)
+
+## Showing text [10 min]
+
+One of the main goals of programming is to have the computer produce output. Think back to us baking: what's the point of us following all those instructions if we don't get to eat the cookies at the end? The cookies were the output of our recipe! Similarly, we can use Python code to have our computer generate output. Type (or copy) the following Python code into Thonny:
+
+```py
+print("Hello, world!")
+```
+
+Once you've added it, click the green play button in the top left bar and pay attention to what happens at the bottom in the Shell window. Everything in between the purple arrows is the output of the program. Notice that everything in between the quotes (`"`) in your code was shown in the output.
+
+What we showed you in the code above is named a **print call**. Unlike how you would normally think of printing, there is no paper involved here. Instead, the printing we're talking about here means what is being displayed in the output. You can write multiple print calls in your code to show many things in the output:
+
+```py
+print("I am 20 years old!")
+print("Wow, I'm old...")
+```
+
+The "call" part of the name comes from the way the code looks. Any code that looks similar to `f(x)` is named a **call**. In our first print call, `f` is `print` and `x` is `"Hello, world!"`! Calls allow you to tell the computer you want to do some action: a print call tells the computer you want to show whatever you give it in the output.
+
+### Exercise 1. All About You!
+
+Write two print calls in your Python program. The first one should introduce yourself, and the second one should be the age of the JMU Computer Science department's pet cat. Her name is Kiki and she is 8 years old!
+
+The output should look something like this after you click the green play button:
+
+```
+Hi! My name is Ajax
+The cat's age is 8
+```
+
+## Variables [10 min]
+
+Imagine if my code had these two print calls in it:
+
+```py
+print("Hi! My age is 20")
+print("Gosh, you're old if you're 20")
+```
+
+Now imagine it was next year and I turn 21. I'd have to change both my print calls to update my code! If my code keeps getting bigger and bigger, I might have 10, 20, or even more places where I would have to change my age! Luckily, Python has a solution to repetition like this: variables!
+
+```py
+my_age = 20
+print("Hi! My age is", my_age)
+print("Gosh, you're old if you're", my_age)
+```
+
+Instead of putting my age in two places, I say what my age is beforehand and give it a name that I can refer to it by `my_age`. We can say that the **value** of the `my_age` variable is `20`.
+
+!!! note annotate "Note"
+
+    Names of variables in Python cannot include spaces, so programmers often replace them with underscores (`_`). This is why the name of the variable in the example above is `my_age` instead of `my age`.
+
+Notice that the print calls have changed! It turns out that you can actually put multiple things in the parentheses for the print call separated by commas (`,`), making our `f(x)` example from before into something more like `f(x, y)`! Also, we can put variables into our print calls as well, which is pretty neat.
+
+Another interesting thing you might've noticed in the code above is that I didn't put quotes around the `20` when I specified my age for the variable. It turns out that computers do not store text (the stuff you've seen surrounded by quotes like `"Hello, world!"`) in the same way that they store numbers:
+
+```py
+my_age_number = 20
+my_age_text = "20"
+```
+
+These are NOT the same!
+
+Right now, this probably doesn't seem like that big of a deal. However, the Python math operations will not work on the text versions of numbers, instead only working on what Python considers actual numbers.
+
+Python determines what is an actual number by looking at the **data type** of a variable in your code. The data type of the variable is determined by whatever value you gave it (which is anything to the right of the equals `=` sign). In the example above, `my_age_number` has the `int` data type because I assigned it the value `20`. `int` stands for "integer" and it basically means a whole number. `my_age_text` has the `str` data type because I assigned it the value `"20"`. `str` stands for "string", which is a programmer's fancy way of saying "text".
+
+You can use other variables in your code to calculate new variables with your typical math operations:
+
+```py
+my_age = 20
+my_age_next_year = my_age + 1
+```
+
+The value of `my_age_next_year` will be `21`.
+
+!!! warning annotate "Warning"
+
+    Note that this wouldn't have worked if `my_age` was text (or a string):
+
+    ```py
+    my_age = "20"
+    my_age_next_year = my_age + 1
+    ```
+
+Here are the operations we can use on variables:
+
+```py
+my_age = 20
+my_age_next_year = my_age + 1   # Addition
+my_age_last_year = my_age - 1   # Subtraction
+my_cat_age = 8 * my_age         # Multiplication
+my_divided_age = my_age // 5    # Division
+```
+
+### Exercise 2. Human Years Conversion
+
+Take your name and your pet's age from Exercise 1 and put them in variables. Replace them in your print calls with the variables you just created.
+
+Then, use the variable that stores the JMU CS cat's age to calculate the cat's age in human years. You can do this by multiplying the cat's age by 8.
+
+Once you've done that, modify your second print call to show the human age of the cat instead.
+
+The output should look something like this after you click the green play button:
+
+```
+Hi! My name is Ajax
+The cat's age in human years is 64
+```
+
+## Talking to the computer [10 min]
+
+## Conditionals [10 min]
