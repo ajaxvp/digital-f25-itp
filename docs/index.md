@@ -127,4 +127,58 @@ The cat's age in human years is 64
 
 ## Talking to the computer [10 min]
 
+Although it's pretty cool that we can do calculations like finding the human age of a cat, wouldn't it be even cooler if each time we ran the program we could *ask* about our user's cat? If we could do this, we could make it so anyone could use our program to find *their* cat's human age!
+
+Luckily, Python provides us this ability! We can make an **input call** to ask the user about stuff we care about:
+
+```py
+input("What's your cat's age?")
+```
+
+We have a problem, though. After we ask the user for their cat's age, how do we get their response?
+
+It turns out that input calls are a little more special than our print calls from earlier. By making a variable and setting its value to our input call, we can get the response!
+
+```py
+cat_age_text = input("What's your cat's age?")
+```
+
+For example, if I were to run this code (by hitting the green arrow button in the top left) and type `8` when it asked me for my cat's age, the `cat_age_text` variable would have the value `"8"`.
+
+There are two interesting things about this:
+
+1. The value in a variable doesn't have to be exactly what comes after the equals sign! It can also be the result of a call, like our input call.
+2. The data type of the `cat_age_text` variable is **not** `int`. Instead, it's a `str` (which is just text). This means I can't do math with `cat_age_text`.
+
+How do we solve the second issue? It turns out that Python provides us the ability to convert text with numbers in it into actual numbers:
+
+```py
+cat_age_text = "20"
+cat_age = int(cat_age_text)
+```
+
+With the **int call**, we can convert `"20"` (which has the data type `str`) into `20` (which has the data type `int`)! So in this example, `cat_age` has the value `20`.
+
+Combining these two code examples, we can simply write:
+
+```py
+cat_age_text = input("What's your cat's age?")
+cat_age = int(cat_age_text)
+```
+
+First, we ask the user what their cat's age is. This age is then stored as the value of the variable `cat_age_text`. But we have a problem: the data type of the variable `cat_age_text` is `str`! We can't do math on it yet, so we use an int call to convert `cat_age_text` into a number, making it have the `int` data type. Then, we set `cat_age` to be that value.
+
+### Exercise 3. Asking Your User
+
+Working off of Exercise 2, rewrite your variables that store your name and the JMU CS cat's age to instead ask the user for their name and cat's age.
+
+Running your program should look something like this after you click the green play button. The example responses for this run of the program are after the question marks in the questions.
+
+```
+What is your name? Ajax
+What's your cat's age? 8
+Hi! Your name is Ajax
+Your cat's age in human years is 64
+```
+
 ## Conditionals [10 min]
