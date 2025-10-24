@@ -8,8 +8,6 @@ print("Hi! Your name is", name)
 if pet_type == "cat":
     human_age = pet_age * 8
     print("Your cat's age in human years is", human_age)
-elif pet_type == "dog":
+if pet_type == "dog":
     human_age = pet_age * 7
     print("Your dog's age in human years is", human_age)
-else:
-    print("Pet type not recognized.")

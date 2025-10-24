@@ -132,15 +132,19 @@ Although it's pretty cool that we can do calculations like finding the human age
 Luckily, Python provides us this ability! We can make an **input call** to ask the user about stuff we care about:
 
 ```py
-input("What's your cat's age?")
+input("What's your cat's age? ")
 ```
+
+!!! note annotate "Note"
+
+    The space after the question mark in the question we're asking will put space between the question and the user's response.
 
 We have a problem, though. After we ask the user for their cat's age, how do we get their response?
 
 It turns out that input calls are a little more special than our print calls from earlier. By making a variable and setting its value to our input call, we can get the response!
 
 ```py
-cat_age_text = input("What's your cat's age?")
+cat_age_text = input("What's your cat's age? ")
 ```
 
 For example, if I were to run this code (by hitting the green arrow button in the top left) and type `8` when it asked me for my cat's age, the `cat_age_text` variable would have the value `"8"`.
@@ -162,7 +166,7 @@ With the **int call**, we can convert `"20"` (which has the data type `str`) int
 Combining these two code examples, we can simply write:
 
 ```py
-cat_age_text = input("What's your cat's age?")
+cat_age_text = input("What's your cat's age? ")
 cat_age = int(cat_age_text)
 ```
 
@@ -181,4 +185,38 @@ Hi! Your name is Ajax
 Your cat's age in human years is 64
 ```
 
-## Conditionals [10 min]
+## Basic conditional programming [10 min]
+
+At this point, you have developed quite a substantial program. But, what if we wanted to take it a step further? Imagine if we were to also ask the user what *type* of animal their pet was? Then, depending on what type of pet they tell us, we calculate that pet's age in human years.
+
+To solve this problem, the most important thing to identify is how we will determine how to calculate the pet's age in human years. If the user's pet is a dog, we want our program to *only* calculate the human age for a dog, not any other animal. Python's solution to this is the `if` statement:
+
+```py
+pet_type = input("What type of animal is your pet? ")
+if pet_type == "cat":
+    print("Your pet is a cat!")
+```
+
+In the above code snippet, Python will check to see if the `pet_type` variable is equal to `"cat"`, and run the print call if it is. Notice how checking for something to be equal to another thing uses `==` instead of `=`. This is because we already are using `=` to set the values of variables, and the people who made Python didn't want to confuse people and use the same symbol twice for two different operations.
+
+### Exercise 4. Multiple Types of Animals
+
+Building off of Exercise 3, ask the user about the type of animal that their pet is in the same way you did for their name. Then, using the type of animal, calculate its age in human years for both cats and dogs. You already have the calculation for cats, and you can incorporate dogs in using `if` statements. A dog's age in human years is 7 times its original age.
+
+After updating your exercise, running your program should look something like this after you click the green play button. The example responses for this run of the program are after the question marks in the questions.
+
+```
+What is your name? Ajax
+What's your pet's age? 8
+What type of animal is your pet? dog
+Hi! Your name is Ajax
+Your dog's age in human years is 56
+```
+
+## Additional Learning Resources
+
+Thanks to [Dr. Chris Mayfield](https://w3.cs.jmu.edu/mayfiecs) from the JMU Computer Science Department for compiling these resources!
+
+ - [W3Schools Tutorial](https://www.w3schools.com/python)
+ - [Python for Everybody](https://www.py4e.com/book)
+ - [The Coder's Apprentice](https://www.spronck.net/pythonbook)
