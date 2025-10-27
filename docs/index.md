@@ -220,3 +220,7 @@ Thanks to [Dr. Chris Mayfield](https://w3.cs.jmu.edu/mayfiecs) from the JMU Comp
  - [W3Schools Tutorial](https://www.w3schools.com/python)
  - [Python for Everybody](https://www.py4e.com/book)
  - [The Coder's Apprentice](https://www.spronck.net/pythonbook)
+
+### Credits
+
+Thanks to the team of professors who put together course material for CS 149 in Fall 2025 for their help developing this material. The exercises in this workshop were built off of the [pet age calculator](https://w3.cs.jmu.edu/cs149/f25/hw/hw3/#exercise-34-pet-age-calculator) homework for the class.
